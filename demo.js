@@ -1,11 +1,18 @@
 var locations = [
-    'Denver, CO',
     'Austin, TX',
     'Eiffel Tower, Paris, France',
+    'Denver, CO',
+    'Vancouver, BC',
     'San Francisco, CA',
+    'Rome',
     'Seattle, WA',
-    'London Eye, London, England',
-    'Wat Arun, Bangkok, Thailand'
+    'Singapore',
+    'Reflecting Pool, Washington DC',
+    'Amsterdam',
+    'Portland, OR',
+    'Shanghai, China',
+    'Michigan Ave, Chicago, IL',
+    'Melbourne, Australia'
 ],
 distances = [
     5,
@@ -19,7 +26,8 @@ s_len = locations.length,
 d_len = distances.length,
 s_i = 0,
 d_i = 0,
-interval = countdown = 20,
+interval = 11,
+countdown = 1,
 $time = $('<span>')
     .text(countdown)
     .css('font-size', '120%'),
@@ -52,7 +60,5 @@ $('#left').find('.inner').append(
             ' seconds.'
         )
 );
+$('label[for=route_length]').text('Length (approx.):');
 var interval_id = window.setInterval(demo, 1000);
-
-
-javascript:(function(){var d=document,s=d.createElement('script');s.src='https://raw.github.com/JasonSanford/jira-git-list-bookmarklet/master/bookmarklet.js';d.body.appendChild(s);}());
