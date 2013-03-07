@@ -65,6 +65,7 @@ demo = function () {
 undemo = function () {
     window.clearInterval(interval_id);
 };
+$('#map_container').find('div').filter('[title="MapQuest OSM layer"]').click();
 $('#left').find('.inner').append(
     $('<p>')
         .css({
