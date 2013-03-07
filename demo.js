@@ -1,8 +1,10 @@
+(function () {
 window.gen_complete = true;
 
 // PubSub already in require directory - just request ref
-require(['pubsub'], function (p) {
+window.require(['pubsub'], function (p) {
     p.subscribe('end.processing', function () {
+        console.log('Finished');
         window.gen_complete = true;
     });
 });
@@ -40,7 +42,7 @@ interval = 11,
 interval_id,
 countdown = 1,
 $time = $('<span>')
-    .text(countdown)
+    .text('0')
     .css('font-size', '120%'),
 demo = function () {
     if (!window.gen_complete) {
@@ -52,12 +54,13 @@ demo = function () {
     }
     $search.val(locations[s_i]).trigger('change');
     $distance.val(distances[Math.floor(Math.random() * d_len)]);
+    window.gen_complete = false;
     $generate.click();
+    console.log('Started', locations[s_i]);
 
     // set up next iteration
-    s_i = s_i < s_len ? s_i + 1 : 0;
+    s_i = s_i < s_len - 1 ? s_i + 1 : 0;
     countdown = interval;
-    window.gen_complete = false;
 },
 undemo = function () {
     window.clearInterval(interval_id);
@@ -82,3 +85,5 @@ $('#left').find('.inner').append(
 );
 $('label[for=route_length]').text('Length (approx.):');
 interval_id = window.setInterval(demo, 1000);
+window.undemo = undemo;
+}());
