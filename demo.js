@@ -16,7 +16,7 @@ var locations = [
     'Vancouver, BC',
     'San Francisco, CA',
     'Rome',
-    'Seattle, WA',
+    //'Seattle, WA', // Seattle is trouble
     'Osaka-jo, Osaka, Japan',
     'Reflecting Pool, Washington DC',
     'Amsterdam',
