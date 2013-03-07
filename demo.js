@@ -6,13 +6,14 @@ var locations = [
     'San Francisco, CA',
     'Rome',
     'Seattle, WA',
-    'Singapore',
+    'Osaka-jo, Osaka, Japan',
     'Reflecting Pool, Washington DC',
     'Amsterdam',
     'Portland, OR',
     'Shanghai, China',
-    'Michigan Ave, Chicago, IL',
-    'Melbourne, Australia'
+    'Orland Park, Chicago, IL',
+    'Melbourne, Australia',
+    'Cairo, Egypt'
 ],
 distances = [
     5,
@@ -41,6 +42,9 @@ demo = function () {
     $generate.click();
     s_i = s_i < s_len ? s_i + 1 : 0;
     countdown = interval;
+},
+undemo = function () {
+    window.clearInterval(interval_id);
 };
 $('#left').find('.inner').append(
     $('<p>')
